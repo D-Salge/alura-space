@@ -1,242 +1,138 @@
-# 🚀 Alura Space - Galeria de Fotos do Espaço
+Alura Space
+Bem-vindo ao Alura Space, uma aplicação web de galeria de fotos desenvolvida com Django. Este projeto permite que os usuários se cadastrem, façam login, visualizem e gerenciem uma coleção de fotografias. A aplicação é projetada para ser uma plataforma simples e elegante para exibir imagens, com integração ao Amazon S3 para armazenamento de arquivos de mídia.
 
-Uma galeria web completa para exibir e gerenciar fotografias do espaço, desenvolvida com Django. O projeto permite visualizar imagens astronômicas organizadas por categorias como nebulosas, estrelas, galáxias, planetas e satélites.
+📖 Índice
+Funcionalidades Principais
 
-## 📋 Índice
+Tecnologias Utilizadas
 
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Funcionalidades](#funcionalidades)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Instalação](#instalação)
-- [Configuração](#configuração)
-- [Como Usar](#como-usar)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
+Guia de Instalação e Execução
 
-## 🎯 Sobre o Projeto
+Estrutura do Projeto
 
-O **Alura Space** é uma aplicação web que oferece uma experiência imersiva para explorar fotografias do espaço. Desenvolvido como parte de um curso da Alura, o projeto demonstra boas práticas de desenvolvimento web com Django, incluindo:
+✨ Funcionalidades Principais
+Autenticação de Usuário: Sistema completo de cadastro, login e logout.
 
-- Interface responsiva e moderna
-- Sistema de busca por nome
-- Organização por tags/categorias
-- Upload e gerenciamento de imagens
-- Painel administrativo completo
+Galeria de Imagens: Visualização de todas as fotografias publicadas na página inicial.
 
-## ✨ Funcionalidades
+Gerenciamento de Fotos: Usuários autenticados podem adicionar, editar e excluir suas próprias fotografias.
 
-### 🖼️ Galeria de Fotos
-- Visualização de fotografias em cards organizados
-- Imagens organizadas por data de publicação
-- Suporte a diferentes formatos de imagem
-- Fallback para imagem padrão quando não há foto
+Visualização Detalhada: Página dedicada para cada imagem.
 
-### 🔍 Sistema de Busca
-- Busca por nome da fotografia
-- Filtros por tags (Nebulosa, Estrela, Galáxia, Planeta, Satélite)
-- Resultados em tempo real
+Armazenamento em Nuvem: Integração com o Amazon S3 para hospedar os arquivos de imagem de forma segura e escalável.
 
-### 📱 Interface Responsiva
-- Design moderno e intuitivo
-- Navegação por categorias
-- Layout adaptável para diferentes dispositivos
-- Ícones e elementos visuais otimizados
+Interface Administrativa: Painel de administração do Django para gerenciamento avançado.
 
-### ⚙️ Painel Administrativo
-- Cadastro e edição de fotografias
-- Controle de publicação (publicar/ocultar)
-- Upload de imagens
-- Gerenciamento de metadados
+🛠️ Tecnologias Utilizadas
+Backend:
 
-## 🛠️ Tecnologias Utilizadas
+Python 3
 
-### Backend
-- **Django 5.2.3** - Framework web Python
-- **Python 3.x** - Linguagem de programação
-- **SQLite** - Banco de dados (desenvolvimento)
+Django 4.1
 
-### Frontend
-- **HTML5** - Estrutura das páginas
-- **CSS3** - Estilização e layout
-- **JavaScript** - Interatividade (quando necessário)
+Frontend:
 
-### Dependências
-- `asgiref==3.8.1` - Interface ASGI
-- `python-dotenv==1.1.0` - Gerenciamento de variáveis de ambiente
-- `sqlparse==0.5.3` - Parser SQL
-- `tzdata==2025.2` - Dados de fuso horário
+HTML5
 
-## 📁 Estrutura do Projeto
+CSS3
 
-```
-alura-space/
-├── galeria/                 # App principal
-│   ├── models.py           # Modelo Fotografia
-│   ├── views.py            # Views da aplicação
-│   ├── urls.py             # URLs do app
-│   ├── admin.py            # Configuração do admin
-│   └── migrations/         # Migrações do banco
-├── setup/                  # Configurações do projeto
-│   ├── settings.py         # Configurações Django
-│   ├── urls.py             # URLs principais
-│   └── static/             # Arquivos estáticos
-├── templates/              # Templates HTML
-│   └── galeria/
-│       ├── base.html       # Template base
-│       ├── index.html      # Página inicial
-│       ├── image.html      # Página da imagem
-│       ├── buscar.html     # Página de busca
-│       └── partials/       # Partials do template
-├── static/                 # Arquivos estáticos
-│   ├── assets/             # Recursos (imagens, ícones)
-│   └── styles/             # Arquivos CSS
-├── media/                  # Upload de imagens
-├── requirements.txt        # Dependências Python
-└── manage.py              # Script de gerenciamento Django
-```
+Banco de Dados:
 
-## 🚀 Instalação
+SQLite 3 (padrão para desenvolvimento)
 
-### Pré-requisitos
-- Python 3.8 ou superior
-- pip (gerenciador de pacotes Python)
-- Git (para clonar o repositório)
+Armazenamento de Mídia:
 
-### Passos para Instalação
+Amazon S3
 
-1. **Clone o repositório**
-   ```bash
-   git clone <url-do-repositorio>
-   cd alura-space
-   ```
+django-storages
 
-2. **Crie um ambiente virtual**
-   ```bash
-   python -m venv venv
-   ```
+boto3
 
-3. **Ative o ambiente virtual**
-   
-   **Windows:**
-   ```bash
-   venv\Scripts\activate
-   ```
-   
-   **Linux/Mac:**
-   ```bash
-   source venv/bin/activate
-   ```
+Gerenciamento de Ambiente:
 
-4. **Instale as dependências**
-   ```bash
-   pip install -r requirements.txt
-   ```
+python-dotenv
 
-## ⚙️ Configuração
+🚀 Guia de Instalação e Execução
+Siga os passos abaixo para configurar e executar o projeto em seu ambiente local.
 
-1. **Configure as variáveis de ambiente**
-   
-   Crie um arquivo `.env` na raiz do projeto:
-   ```env
-   SECRET_KEY=sua_chave_secreta_aqui
-   DEBUG=True
-   ```
+1. Pré-requisitos
+Python 3.8 ou superior
 
-2. **Execute as migrações**
-   ```bash
-   python manage.py makemigrations
-   python manage.py migrate
-   ```
+pip (gerenciador de pacotes do Python)
 
-3. **Crie um superusuário (opcional)**
-   ```bash
-   python manage.py createsuperuser
-   ```
+2. Clone o Repositório
+Bash
 
-4. **Execute o servidor de desenvolvimento**
-   ```bash
-   python manage.py runserver
-   ```
+git clone https://github.com/seu-usuario/alura-space.git
+cd alura-space
+3. Crie e Ative um Ambiente Virtual (venv)
+É uma boa prática isolar as dependências do projeto.
 
-5. **Acesse a aplicação**
-   
-   Abra seu navegador e acesse: `http://127.0.0.1:8000/`
+No Windows:
 
-## 📖 Como Usar
+Bash
 
-### 👤 Usuário Final
+python -m venv venv
+venv\Scripts\activate
+No macOS/Linux:
 
-1. **Navegar pela Galeria**
-   - Acesse a página inicial para ver todas as fotografias
-   - Use as tags para filtrar por categoria
-   - Clique em uma imagem para ver detalhes
+Bash
 
-2. **Buscar Fotografias**
-   - Use a barra de busca para encontrar fotos por nome
-   - Os resultados são exibidos em tempo real
+python3 -m venv venv
+source venv/bin/activate
+4. Instale as Dependências
+Instale todas as bibliotecas necessárias listadas no arquivo requirements.txt.
 
-3. **Visualizar Detalhes**
-   - Clique em qualquer imagem para ver informações completas
-   - Visualize nome, legenda, descrição e data da fotografia
+Bash
 
-### 🔧 Administrador
+pip install -r requirements.txt
+5. Configure as Variáveis de Ambiente
+Crie um arquivo chamado .env na raiz do projeto (na mesma pasta que o manage.py) e adicione as seguintes variáveis:
 
-1. **Acessar o Painel Admin**
-   - Acesse: `http://127.0.0.1:8000/admin/`
-   - Faça login com suas credenciais
+Snippet de código
 
-2. **Gerenciar Fotografias**
-   - Adicione novas fotografias
-   - Edite informações existentes
-   - Controle a publicação (publicar/ocultar)
-   - Faça upload de imagens
+# Chave secreta para o Django (gere uma nova e única para você)
+SECRET_KEY='sua-secret-key-super-secreta-aqui'
 
-3. **Configurar Metadados**
-   - Defina nome, legenda e descrição
-   - Selecione a categoria (tag)
-   - Configure a data da fotografia
+# Credenciais do seu bucket S3 na AWS
+AWS_ACCESS_KEY_ID='sua-access-key-id'
+AWS_SECRET_ACCESS_KEY='sua-secret-access-key'
+AWS_STORAGE_BUCKET_NAME='nome-do-seu-bucket'
+AWS_S3_REGION_NAME='regiao-do-seu-bucket' # ex: us-east-1
+6. Aplique as Migrações do Banco de Dados
+Este comando cria as tabelas do banco de dados necessárias para a aplicação.
 
-## 🎨 Modelo de Dados
+Bash
 
-### Fotografia
-- **nome**: Nome da fotografia (CharField, obrigatório)
-- **legenda**: Legenda curta (CharField, obrigatório)
-- **descricao**: Descrição detalhada (TextField, obrigatório)
-- **tag**: Categoria (choices: Nebulosa, Estrela, Galáxia, Planeta, Satélite)
-- **foto**: Arquivo de imagem (ImageField, opcional)
-- **publicada**: Status de publicação (BooleanField, padrão: False)
-- **data_fotografia**: Data da fotografia (DateTimeField, padrão: agora)
+python manage.py migrate
+7. Crie um Superusuário
+Você precisará de um superusuário para acessar o painel de administração do Django.
 
-## 🔧 Desenvolvimento
+Bash
 
-### Estrutura de Views
-- `index()`: Exibe a galeria principal
-- `image(foto_id)`: Exibe detalhes de uma imagem específica
-- `buscar()`: Implementa a funcionalidade de busca
+python manage.py createsuperuser
+Siga as instruções para criar seu usuário e senha.
 
-### URLs Principais
-- `/`: Página inicial (galeria)
-- `/imagem/<id>`: Página de detalhes da imagem
-- `/buscar`: Página de busca
-- `/admin/`: Painel administrativo
+8. Execute o Servidor de Desenvolvimento
+Com tudo configurado, inicie o servidor local.
 
-## 🤝 Contribuição
+Bash
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
+python manage.py runserver
+Acesse o projeto em seu navegador no endereço http://127.0.0.1:8000/.
 
-## 📝 Licença
+📁 Estrutura do Projeto
+O projeto segue a estrutura padrão do Django, com uma clara separação de responsabilidades:
 
-Este projeto foi desenvolvido como parte de um curso da Alura. Sinta-se livre para usar, modificar e distribuir conforme necessário.
-
-## 👨‍💻 Autor
-
-Desenvolvido durante o curso de Django da Alura.
-
----
-
-**⭐ Se este projeto foi útil para você, considere dar uma estrela!** 
+├── apps/                    # Contêiner para as aplicações do projeto
+│   ├── galeria/             # App para gerenciar a galeria, fotos, etc.
+│   └── usuarios/            # App para gerenciar usuários, login, cadastro
+├── setup/                   # Pasta de configuração principal do projeto
+│   ├── settings.py          # Arquivo principal de configurações
+│   ├── urls.py              # Arquivo principal de URLs
+│   └── ...
+├── templates/               # Templates HTML globais
+├── static/                  # Pasta para arquivos estáticos coletados (gerada)
+├── .env                     # Arquivo com variáveis de ambiente (local)
+├── manage.py                # Utilitário de linha de comando do Django
+└── requirements.txt         # Lista de dependências Python
