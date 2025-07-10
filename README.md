@@ -1,69 +1,53 @@
-Alura Space
+# Alura Space
+
 Bem-vindo ao Alura Space, uma aplicação web de galeria de fotos desenvolvida com Django. Este projeto permite que os usuários se cadastrem, façam login, visualizem e gerenciem uma coleção de fotografias. A aplicação é projetada para ser uma plataforma simples e elegante para exibir imagens, com integração ao Amazon S3 para armazenamento de arquivos de mídia.
 
-📖 Índice
-Funcionalidades Principais
+## 📖 Índice
 
-Tecnologias Utilizadas
+* [Funcionalidades Principais](#-funcionalidades-principais)
+* [Tecnologias Utilizadas](#️-tecnologias-utilizadas)
+* [Guia de Instalação e Execução](#-guia-de-instalação-e-execução)
+* [Estrutura do Projeto](#-estrutura-do-projeto)
 
-Guia de Instalação e Execução
+## ✨ Funcionalidades Principais
 
-Estrutura do Projeto
+* **Autenticação de Usuário:** Sistema completo de cadastro, login e logout.
+* **Galeria de Imagens:** Visualização de todas as fotografias publicadas na página inicial.
+* **Gerenciamento de Fotos:** Usuários autenticados podem adicionar, editar e excluir suas próprias fotografias.
+* **Visualização Detalhada:** Página dedicada para cada imagem.
+* **Armazenamento em Nuvem:** Integração com o Amazon S3 para hospedar os arquivos de imagem de forma segura e escalável.
+* **Interface Administrativa:** Painel de administração do Django para gerenciamento avançado.
 
-✨ Funcionalidades Principais
-Autenticação de Usuário: Sistema completo de cadastro, login e logout.
+## 🛠️ Tecnologias Utilizadas
 
-Galeria de Imagens: Visualização de todas as fotografias publicadas na página inicial.
+* **Backend:**
+    * Python 3
+    * Django 4.1
+* **Frontend:**
+    * HTML5
+    * CSS3
+* **Banco de Dados:**
+    * SQLite 3 (padrão para desenvolvimento)
+* **Armazenamento de Mídia:**
+    * Amazon S3
+    * django-storages
+    * boto3
+* **Gerenciamento de Ambiente:**
+    * python-dotenv
 
-Gerenciamento de Fotos: Usuários autenticados podem adicionar, editar e excluir suas próprias fotografias.
+## 🚀 Guia de Instalação e Execução
 
-Visualização Detalhada: Página dedicada para cada imagem.
-
-Armazenamento em Nuvem: Integração com o Amazon S3 para hospedar os arquivos de imagem de forma segura e escalável.
-
-Interface Administrativa: Painel de administração do Django para gerenciamento avançado.
-
-🛠️ Tecnologias Utilizadas
-Backend:
-
-Python 3
-
-Django 4.1
-
-Frontend:
-
-HTML5
-
-CSS3
-
-Banco de Dados:
-
-SQLite 3 (padrão para desenvolvimento)
-
-Armazenamento de Mídia:
-
-Amazon S3
-
-django-storages
-
-boto3
-
-Gerenciamento de Ambiente:
-
-python-dotenv
-
-🚀 Guia de Instalação e Execução
 Siga os passos abaixo para configurar e executar o projeto em seu ambiente local.
 
-1. Pré-requisitos
-Python 3.8 ou superior
+### 1. Pré-requisitos
 
-pip (gerenciador de pacotes do Python)
+* Python 3.8 ou superior
+* `pip` (gerenciador de pacotes do Python)
 
-2. Clone o Repositório
-Bash
+### 2. Clone o Repositório
 
-git clone https://github.com/seu-usuario/alura-space.git
+```bash
+git clone [https://github.com/seu-usuario/alura-space.git](https://github.com/seu-usuario/alura-space.git)
 cd alura-space
 3. Crie e Ative um Ambiente Virtual (venv)
 É uma boa prática isolar as dependências do projeto.
