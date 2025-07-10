@@ -4,10 +4,10 @@ Bem-vindo ao Alura Space, uma aplicação web de galeria de fotos desenvolvida c
 
 ## 📖 Índice
 
-* [Funcionalidades Principais](#-funcionalidades-principais)
-* [Tecnologias Utilizadas](#️-tecnologias-utilizadas)
-* [Guia de Instalação e Execução](#-guia-de-instalação-e-execução)
-* [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Funcionalidades Principais](#-funcionalidades-principais)
+- [Tecnologias Utilizadas](#️-tecnologias-utilizadas)
+- [Guia de Instalação e Execução](#-guia-de-instalação-e-execução)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
 
 ## ✨ Funcionalidades Principais
 
@@ -39,73 +39,84 @@ Bem-vindo ao Alura Space, uma aplicação web de galeria de fotos desenvolvida c
 
 Siga os passos abaixo para configurar e executar o projeto em seu ambiente local.
 
-### 1. Pré-requisitos
+1.  **Pré-requisitos**
+    * Python 3.8 ou superior
+    * `pip` (gerenciador de pacotes do Python)
 
-* Python 3.8 ou superior
-* `pip` (gerenciador de pacotes do Python)
+2.  **Clone o Repositório**
+    ```bash
+    git clone [https://github.com/seu-usuario/alura-space.git](https://github.com/seu-usuario/alura-space.git)
+    cd alura-space
+    ```
 
-### 2. Clone o Repositório
+3.  **Crie e Ative um Ambiente Virtual (venv)**
 
-```bash
-git clone [https://github.com/seu-usuario/alura-space.git](https://github.com/seu-usuario/alura-space.git)
-cd alura-space
-3. Crie e Ative um Ambiente Virtual (venv)
-É uma boa prática isolar as dependências do projeto.
+    É uma boa prática isolar as dependências do projeto.
 
-No Windows:
+    * **No Windows:**
+        ```bash
+        python -m venv venv
+        venv\Scripts\activate
+        ```
+    * **No macOS/Linux:**
+        ```bash
+        python3 -m venv venv
+        source venv/bin/activate
+        ```
 
-Bash
+4.  **Instale as Dependências**
 
-python -m venv venv
-venv\Scripts\activate
-No macOS/Linux:
+    Instale todas as bibliotecas necessárias listadas no arquivo `requirements.txt`.
 
-Bash
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-python3 -m venv venv
-source venv/bin/activate
-4. Instale as Dependências
-Instale todas as bibliotecas necessárias listadas no arquivo requirements.txt.
+5.  **Configure as Variáveis de Ambiente**
 
-Bash
+    Crie um arquivo chamado `.env` na raiz do projeto (na mesma pasta que o `manage.py`) e adicione as seguintes variáveis:
 
-pip install -r requirements.txt
-5. Configure as Variáveis de Ambiente
-Crie um arquivo chamado .env na raiz do projeto (na mesma pasta que o manage.py) e adicione as seguintes variáveis:
+    ```env
+    # Chave secreta para o Django (gere uma nova e única para você)
+    SECRET_KEY='sua-secret-key-super-secreta-aqui'
 
-Snippet de código
+    # Credenciais do seu bucket S3 na AWS
+    AWS_ACCESS_KEY_ID='sua-access-key-id'
+    AWS_SECRET_ACCESS_KEY='sua-secret-access-key'
+    AWS_STORAGE_BUCKET_NAME='nome-do-seu-bucket'
+    AWS_S3_REGION_NAME='regiao-do-seu-bucket' # ex: us-east-1
+    ```
 
-# Chave secreta para o Django (gere uma nova e única para você)
-SECRET_KEY='sua-secret-key-super-secreta-aqui'
+6.  **Aplique as Migrações do Banco de Dados**
 
-# Credenciais do seu bucket S3 na AWS
-AWS_ACCESS_KEY_ID='sua-access-key-id'
-AWS_SECRET_ACCESS_KEY='sua-secret-access-key'
-AWS_STORAGE_BUCKET_NAME='nome-do-seu-bucket'
-AWS_S3_REGION_NAME='regiao-do-seu-bucket' # ex: us-east-1
-6. Aplique as Migrações do Banco de Dados
-Este comando cria as tabelas do banco de dados necessárias para a aplicação.
+    Este comando cria as tabelas do banco de dados necessárias para a aplicação.
 
-Bash
+    ```bash
+    python manage.py migrate
+    ```
 
-python manage.py migrate
-7. Crie um Superusuário
-Você precisará de um superusuário para acessar o painel de administração do Django.
+7.  **Crie um Superusuário**
 
-Bash
+    Você precisará de um superusuário para acessar o painel de administração do Django.
 
-python manage.py createsuperuser
-Siga as instruções para criar seu usuário e senha.
+    ```bash
+    python manage.py createsuperuser
+    ```
 
-8. Execute o Servidor de Desenvolvimento
-Com tudo configurado, inicie o servidor local.
+    Siga as instruções para criar seu usuário e senha.
 
-Bash
+8.  **Execute o Servidor de Desenvolvimento**
 
-python manage.py runserver
-Acesse o projeto em seu navegador no endereço http://127.0.0.1:8000/.
+    Com tudo configurado, inicie o servidor local.
 
-📁 Estrutura do Projeto
+    ```bash
+    python manage.py runserver
+    ```
+
+    Acesse o projeto em seu navegador no endereço `http://127.0.0.1:8000/`.
+
+## 📁 Estrutura do Projeto
+
 O projeto segue a estrutura padrão do Django, com uma clara separação de responsabilidades:
 
 ├── apps/                    # Contêiner para as aplicações do projeto
